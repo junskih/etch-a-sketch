@@ -1,0 +1,102 @@
+:root {
+  --grid-min-size: 600px;
+  --grid-max-size: 900px;
+  --grid-size: 32;
+  --cell-color: black;
+  --background-color: #FA001D;
+  --highlight-color: #FF576B;
+  --text-color: white;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Dancing Script', cursive;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+#gridsizelabel {
+  font-size: 1.5em;
+}
+
+#gridsizerange {
+  -webkit-appearance: none;
+  background: transparent;
+  width: 300px;
+  border: 1px solid white;
+  border-radius: 0.3em;
+  cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: white;
+  height: 1em;
+  width: 1em;
+  border-radius: 1em;
+}
+
+#gridsizerange:focus {
+  outline: none;
+}
+
+#buttoncontainer {
+  margin: 2em 0;
+}
+
+button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  background-color: var(--background-color);
+  border: 1px solid white;
+  border-radius: 0.2em;
+  box-shadow: 3px 3px 0 0px white;
+  color: white;
+  margin: 0 1em;
+  padding: 0.5em 1em;
+}
+
+button:hover {
+  background-color: var(--highlight-color);
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  box-shadow: none;
+  transform: translateX(2px) translateY(2px);
+}
+
+button.active {
+  background-color: var(--highlight-color);
+}
+
+#container {
+  display: grid;
+  grid-template-rows: repeat(var(--grid-size), 1fr);
+  grid-template-columns: repeat(var(--grid-size), 1fr);
+  min-width: var(--grid-min-size);
+  min-height: var(--grid-min-size);
+  max-width: var(--grid-max-size);
+  max-height: var(--grid-max-size);
+  margin: 1em 0;
+  border: 1px solid black;
+  box-shadow: 5px 5px 20px 1px black;
+}
+
+.cell {
+  background-color: white;
+  border: 1px solid black;
+}
+
+.cellcolored {
+  background-color: var(--cell-color);
+}
